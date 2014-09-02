@@ -52,6 +52,11 @@ set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*Cap
 " Or use vividchalk
 " colorscheme topfunky-light
 
+set fileencoding=utf-8
+set encoding=utf-8
+set backspace=indent,eol,start
+set guifont=Monaco:h14
+
 " Tab mappings.
 map <leader>tt :tabnew<cr>
 map <leader>te :tabedit
