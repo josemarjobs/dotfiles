@@ -67,6 +67,7 @@ map <leader>tp :tabprevious<cr>
 map <leader>tf :tabfirst<cr>
 map <leader>tl :tablast<cr>
 map <leader>tm :tabmove
+map <leader>rs :!rspec % <cr>
 nnoremap <F3> :NumbersToggle<CR>
 
 " Uncomment to use Jamis Buck's file opening plugin
@@ -85,5 +86,7 @@ nnoremap <F3> :NumbersToggle<CR>
 
 " For the MakeGreen plugin and Ruby RSpec. Uncomment to use.
 autocmd BufNewFile,BufRead *_spec.rb compiler rspec
+set cursorline
+set cursorcolumn
 
 
