@@ -1,6 +1,3 @@
-" Example Vim configuration.
-" Copy or symlink to ~/.vimrc or ~/_vimrc.
-
 set nocompatible                  " Must come first because it changes other options.
 
 call pathogen#infect()                      " use pathogen
@@ -8,6 +5,7 @@ call pathogen#helptags()
 syntax enable                     " Turn on syntax highlighting.
 filetype plugin indent on         " Turn on file type detection.
 
+" Powerline
 set rtp+=/Users/josemarmagalhaes/.vim/bundle/powerline/powerline/bindings/vim
 
 
@@ -43,7 +41,7 @@ set incsearch                     " Highlight matches as you type.
 set hlsearch                      " Highlight matches.
 
 set wrap                          " Turn on line wrapping.
-set scrolloff=5                   " Show 3 lines of context around the cursor.
+set scrolloff=3                   " Show 3 lines of context around the cursor.
 
 set title                         " Set the terminal's title
 
@@ -53,20 +51,15 @@ set nobackup                      " Don't make a backup before overwriting a fil
 set nowritebackup                 " And again.
 set directory=$HOME/.vim/tmp//,.  " Keep swap files in one location
 
-" UNCOMMENT TO USE
 set tabstop=2                    " Global tab width.
 set softtabstop=2                " Number of spaces in tab when editing
 set shiftwidth=2                 " And again, related.
 set expandtab                    " Use spaces instead of tabs
 
-set laststatus=2                  " Show the status line all the time
 " Useful status information at bottom of screen
 " :if expand("%") == ""|browse confirm w|else|confirm w|endif
 " set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
-" let g:Powerline_symbols = "fancy"
-" Or use vividchalk
-" colorscheme topfunky-light
 
 set fileencoding=utf-8
 set encoding=utf-8
@@ -89,19 +82,7 @@ map <leader>h :nohlsearch <cr> " clear the highlighting of previous search
 
 nnoremap <F3> :NumbersToggle<CR> " toggle relative number
 
-" Uncomment to use Jamis Buck's file opening plugin
-"map <Leader>t :FuzzyFinderTextMate<Enter>
 
-" Controversial...swap colon and semicolon for easier commands
-"nnoremap ; :
-"nnoremap : ;
-
-"vnoremap ; :
-"vnoremap : ;
-
-" Automatic fold settings for specific files. Uncomment to use.
-" autocmd FileType ruby setlocal foldmethod=syntax
-" autocmd FileType css  setlocal foldmethod=indent shiftwidth=2 tabstop=2
 
 " For the MakeGreen plugin and Ruby RSpec. Uncomment to use.
 autocmd BufNewFile,BufRead *_spec.rb compiler rspec
