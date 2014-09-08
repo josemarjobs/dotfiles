@@ -3,10 +3,23 @@
 
 set nocompatible                  " Must come first because it changes other options.
 
-silent! call pathogen#runtime_append_all_bundles()
-
+call pathogen#infect()                      " use pathogen
+call pathogen#helptags()
 syntax enable                     " Turn on syntax highlighting.
 filetype plugin indent on         " Turn on file type detection.
+
+set rtp+=/Users/josemarmagalhaes/.vim/bundle/powerline/powerline/bindings/vim
+
+
+" Always show statusline
+set laststatus=2
+
+" Use 256 colours (Use this setting only if your terminal supports 256 colours)
+set t_Co=256
+
+
+let mapleader = ','
+let maplocalleader = ','
 
 runtime macros/matchit.vim        " Load the matchit plugin.
 
@@ -42,13 +55,16 @@ set directory=$HOME/.vim/tmp//,.  " Keep swap files in one location
 
 " UNCOMMENT TO USE
 set tabstop=2                    " Global tab width.
+set softtabstop=2                " Number of spaces in tab when editing
 set shiftwidth=2                 " And again, related.
 set expandtab                    " Use spaces instead of tabs
 
 set laststatus=2                  " Show the status line all the time
 " Useful status information at bottom of screen
-set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
+" :if expand("%") == ""|browse confirm w|else|confirm w|endif
+" set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
+" let g:Powerline_symbols = "fancy"
 " Or use vividchalk
 " colorscheme topfunky-light
 
@@ -68,7 +84,10 @@ map <leader>tf :tabfirst<cr>
 map <leader>tl :tablast<cr>
 map <leader>tm :tabmove
 map <leader>rs :!rspec % <cr>
-nnoremap <F3> :NumbersToggle<CR>
+
+map <leader>h :nohlsearch <cr> " clear the highlighting of previous search
+
+nnoremap <F3> :NumbersToggle<CR> " toggle relative number
 
 " Uncomment to use Jamis Buck's file opening plugin
 "map <Leader>t :FuzzyFinderTextMate<Enter>
@@ -88,5 +107,6 @@ nnoremap <F3> :NumbersToggle<CR>
 autocmd BufNewFile,BufRead *_spec.rb compiler rspec
 set cursorline
 set cursorcolumn
-
+set lazyredraw " redraw only when need to
+set showmatch  " highlight matching [{(
 
