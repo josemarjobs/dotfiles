@@ -1,5 +1,7 @@
 set nocompatible                  " Must come first because it changes other options.
 
+runtime macros/matchit.vim
+
 call pathogen#infect()                      " use pathogen
 call pathogen#helptags()
 syntax enable                     " Turn on syntax highlighting.
@@ -15,6 +17,7 @@ set laststatus=2
 " Use 256 colours (Use this setting only if your terminal supports 256 colours)
 set t_Co=256
 
+set autowrite     " Automatically :write before running commands
 
 let mapleader = ','
 let maplocalleader = ','
@@ -90,4 +93,14 @@ set cursorline
 set cursorcolumn
 set lazyredraw " redraw only when need to
 set showmatch  " highlight matching [{(
+
+" Open new split panes to right and bottom, which feels more natural
+set splitbelow
+set splitright
+
+" Quicker window movement
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
 

@@ -6,6 +6,7 @@ alias o="open ."
 alias c="cd"
 alias md="mkdir"
 alias rem="rm -rf"
+alias m="mvim "
 
 # RAILS ALIASES
 alias dbm="./bin/rake db:migrate"

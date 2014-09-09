@@ -1,3 +1,3 @@
 colo solarized
 set bg=dark
-set guifont=PowerlineSymbols:h14
+set guifont=PowerlineSymbols:h13
