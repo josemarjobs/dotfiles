@@ -22,8 +22,6 @@ set autowrite     " Automatically :write before running commands
 let mapleader = ','
 let maplocalleader = ','
 
-runtime macros/matchit.vim        " Load the matchit plugin.
-
 set showcmd                       " Display incomplete commands.
 set showmode                      " Display the mode you're in.
 
@@ -89,8 +87,6 @@ nnoremap <F3> :NumbersToggle<CR> " toggle relative number
 
 " For the MakeGreen plugin and Ruby RSpec. Uncomment to use.
 autocmd BufNewFile,BufRead *_spec.rb compiler rspec
-set cursorline
-set cursorcolumn
 set lazyredraw " redraw only when need to
 set showmatch  " highlight matching [{(
 
