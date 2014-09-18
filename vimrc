@@ -16,7 +16,9 @@ set laststatus=2
 
 " Use 256 colours (Use this setting only if your terminal supports 256 colours)
 set t_Co=256
-
+colorscheme solarized
+set bg=dark
+let g:solarized_termcolors=256
 set autowrite     " Automatically :write before running commands
 
 let mapleader = ','
@@ -87,7 +89,6 @@ nnoremap <F3> :NumbersToggle<CR> " toggle relative number
 
 " For the MakeGreen plugin and Ruby RSpec. Uncomment to use.
 autocmd BufNewFile,BufRead *_spec.rb compiler rspec
-set lazyredraw " redraw only when need to
 set showmatch  " highlight matching [{(
 
 " Open new split panes to right and bottom, which feels more natural
@@ -99,4 +100,6 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
+nnoremap <C-b> :! ruby %<cr>
 
+autocmd FileType ruby compiler ruby
